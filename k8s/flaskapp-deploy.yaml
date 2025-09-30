@@ -19,15 +19,13 @@ spec:
         image: nishdoc1999/flaskapp:latest
         ports:
         - containerPort: 5000
+        envFrom:
+        - secretRef:
+            name: flask-secrets
         env:
         - name: MYSQL_HOST
           value: "10.107.205.241"
-        - name: MYSQL_PASSWORD
-          value: "admin"
-        - name: MYSQL_DB
-          value: "mydb"
-        - name: MYSQL_USER
-          value: "root"
+
        
         
 
